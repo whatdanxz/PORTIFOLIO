@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Portifólio</title>
+</head>
+
+<body>
+  <div class="particulas"></div>
+
+  <nav class="navegacao">
+
+    <ul class="menu">
+      <li>
+        <a href="#Inicio" class="menu-link">Inicío</a>
+      </li>
+      <li>
+        <a href="#Sobre" class="menu-link">Sobre</a>
+      </li>
+      <li>
+        <a href="#Projetos" class="menu-link">Projetos</a>
+      </li>
+      <li>
+        <a href="#Contatos" class="menu-link">Contatos</a>
+      </li>
+    </ul>
+
+  </nav>
+  <main id="Inicio" class="cabecalho">
+
+    <img src="./img/danilo.jpg" alt="Foto de Danilo Cardoso" class="foto-perfil">
+    <h1>Danilo Cardoso</h1>
+    <p class="cabecalho-sub-titulo">Futuro Fullstack</p>
+
+
+  </main>
+  <section id="Sobre" class="Sobre">
+    <h2 class="Sobre-titúlo">Sobre Mim</h2>
+    <div class="Sobre-caixa">
+      <p class="Sobre-paragrafo">" Olá! Sou um desenvolvedor em constante evolução, com uma paixão imensa por aprender e
+        criar experiências digitais incríveis, combinando design e tecnologia para construir sites bonitos e
+        funcionais."</p>
+    </div>
+  </section>
+  <section id="Projetos" class="Projetos">
+    <h2 class="c">Meus Projetos</h2>
+    <div class="Projetos-caixa">
+
+      <div class="Projetos-card">
+        <img src="./img/proejto-starbucks.png" alt="Projeto 1" class="Projetos-imagem">
+        <div class="caixa-textos-prrojeto">
+          <h3 class="info-projetos">Starbucks Coffe</h3>
+          <p class="paragrafo-projetos">Página da Starbucks criada para demonstrar conhecimentos em front-end</p>
+        </div>
+      </div>
+
+      <div class="Projetos-card">
+        <img src="./img/proejto-starbucks.png" alt="Projeto 1" class="Projetos-imagem">
+
+        <h3 class="info-projetos">Starbucks Coffe</h3>
+        <p class="paragrafo-projetos">Página da Starbucks criada para demonstrar conhecimentos em front-end</p>
+      </div>
+
+
+      <div class="Projetos-card">
+        <img src="./img/proejto-starbucks.png" alt="Projeto 1" class="Projetos-imagem">
+        <div class="caixa-textos-prrojeto">
+          <h3 class="info-projetos">Starbucks Coffe</h3>
+          <p class="paragrafo-projetos">Página da Starbucks criada para demonstrar conhecimentos em front-end</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="Contatos" class="Contatos">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <label for="nome">Nome:</label>
+        <input type="text" placeholder="Nome" class="campo-form" id="nome">
+      </div>
+      <div class="grupo-form">
+        <label for="mensagem">Mensagem:</label>
+        <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    </form>
+    
+
+  </section>
+  <script>
+
+function enviarWhats(event) {
+  event.preventDefault(); 
+
+  const nome = document.getElementById('nome').value.trim();
+  const mensagem = document.getElementById('mensagem').value.trim();
+  const telefone = '5541996105464'; 
+
+  if (nome === "" || mensagem === "") {
+    alert("Por favor, preencha todos os campos!");
+    return;
+  }
+
+  const texto = `Olá! Me chamo ${nome}  ${mensagem}`;
+  const msgFormatada = encodeURIComponent(texto);
+  const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+  window.open(url, '_blank');
+}
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
